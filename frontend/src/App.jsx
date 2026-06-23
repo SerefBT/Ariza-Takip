@@ -11,7 +11,7 @@ function App() {
   const [showPassword, setShowPassword] = useState(false);
 
   // --- Sunucu URL Yönetimi ---
-  const defaultApiUrl = 'http://localhost:5000/api';
+  const defaultApiUrl = 'https://ariza-takip-rgty.onrender.com/api';
   const [apiUrl, setApiUrl] = useState(() => {
     return localStorage.getItem('ariza_api_url') || defaultApiUrl;
   });
