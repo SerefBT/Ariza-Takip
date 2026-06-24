@@ -3,19 +3,19 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 
-// Çevre değişkenlerini yükle
+// gizli ayarları okutuyoruz
 dotenv.config();
 
-// Veri tabanına bağlan
+// veritabanına bağlan
 connectDB();
 
 const app = express();
 
-// Middleware'ler
+// veri okuma ayarları
 app.use(cors());
 app.use(express.json());
 
-// API Rotaları
+// sayfa yönlendirmeleri
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/faults', require('./routes/fault'));
 
@@ -34,6 +34,7 @@ app.use((err, req, res, next) => {
   });
 });
 
+// port numarası belirliyoruz
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

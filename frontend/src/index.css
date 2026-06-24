@@ -1,39 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Renk Paleti - Premium Dark/Indigo */
-  --bg-primary: #0b0f19;
-  --bg-secondary: #131a2e;
-  --bg-glass: rgba(20, 28, 52, 0.65);
-  --border-glass: rgba(255, 255, 255, 0.08);
-  --border-glass-hover: rgba(255, 255, 255, 0.15);
+  /* Renk Paleti - Kurumsal Açık Tema */
+  --bg-primary: #f3f4f6; /* Açık gri arkaplan */
+  --bg-secondary: #ffffff; /* Beyaz kartlar */
+  --bg-glass: rgba(255, 255, 255, 0.95);
+  --border-glass: rgba(0, 0, 0, 0.08);
+  --border-glass-hover: rgba(0, 0, 0, 0.15);
   
-  --text-primary: #f3f4f6;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
+  --text-primary: #111827; /* Koyu metin */
+  --text-secondary: #4b5563; /* Gri metin */
+  --text-muted: #9ca3af;
   
-  --accent-color: #6366f1;
-  --accent-color-hover: #4f46e5;
-  --accent-glow: rgba(99, 102, 241, 0.35);
+  --accent-color: #1e3a8a; /* Kurumsal Lacivert */
+  --accent-color-hover: #1e40af;
+  --accent-glow: rgba(30, 58, 138, 0.15);
   
   /* Arıza Durum Renkleri */
-  --status-pending: #f59e0b; /* Beklemede (Orange) */
-  --status-pending-glow: rgba(245, 158, 11, 0.15);
+  --status-pending: #d97706; 
+  --status-pending-glow: rgba(217, 119, 6, 0.15);
   
-  --status-progress: #06b6d4; /* İşlemde (Cyan) */
-  --status-progress-glow: rgba(6, 182, 212, 0.15);
+  --status-progress: #0284c7; 
+  --status-progress-glow: rgba(2, 132, 199, 0.15);
   
-  --status-completed: #10b981; /* Tamamlandı (Green) */
-  --status-completed-glow: rgba(16, 185, 129, 0.15);
+  --status-completed: #16a34a; 
+  --status-completed-glow: rgba(22, 163, 74, 0.15);
   
-  --status-low: #3b82f6;
-  --status-medium: #eab308;
-  --status-high: #f97316;
-  --status-critical: #ef4444;
+  --status-low: #2563eb;
+  --status-medium: #ca8a04;
+  --status-high: #ea580c;
+  --status-critical: #dc2626;
 
   --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-premium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Reset & Base Styles */
@@ -50,10 +50,6 @@ body {
   color: var(--text-primary);
   min-height: 100vh;
   overflow-x: hidden;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.08) 0px, transparent 50%);
-  background-attachment: fixed;
 }
 
 /* Scrollbar Styles */
@@ -80,7 +76,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--bg-secondary);
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
   position: relative;
   border-left: 1px solid var(--border-glass);
   border-right: 1px solid var(--border-glass);
@@ -125,9 +121,9 @@ body {
 }
 
 .input-field {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-glass);
-  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
   padding: 12px 16px;
   color: var(--text-primary);
   font-size: 0.95rem;
@@ -137,8 +133,8 @@ body {
 
 .input-field:focus {
   border-color: var(--accent-color);
-  box-shadow: 0 0 10px var(--accent-glow);
-  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  background: #ffffff;
 }
 
 .select-field {
@@ -172,14 +168,14 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-color), #818cf8);
+  background: var(--accent-color);
   color: white;
-  box-shadow: 0 4px 15px var(--accent-glow);
+  box-shadow: 0 2px 4px var(--accent-glow);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--accent-color-hover), var(--accent-color));
-  box-shadow: 0 6px 20px var(--accent-glow);
+  background: var(--accent-color-hover);
+  box-shadow: 0 4px 6px var(--accent-glow);
   transform: translateY(-1px);
 }
 
@@ -251,8 +247,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 16px 20px;
-  background: rgba(19, 26, 46, 0.85);
-  backdrop-filter: blur(10px);
+  background: #ffffff;
   border-bottom: 1px solid var(--border-glass);
   position: sticky;
   top: 0;
@@ -265,13 +260,14 @@ body {
   gap: 8px;
   font-weight: 800;
   font-size: 1.15rem;
-  color: white;
+  color: var(--text-primary);
 }
 
 .nav-logo span {
-  background: linear-gradient(135deg, var(--accent-color), #06b6d4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .logout-btn {

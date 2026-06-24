@@ -4,16 +4,15 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const { protect, authorize } = require('../middleware/auth');
 
-// JWT üretme fonksiyonu
+// şifreli token oluşturma
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET || 'arizatakip_gizli_anahtar_123!', {
     expiresIn: '30d'
   });
 };
 
-// @desc    Yeni kullanıcı kaydı
+// sisteme kayıt olma
 // @route   POST /api/auth/register
-// @access  Public
 router.post('/register', async (req, res) => {
   try {
     const { username, email, password, role } = req.body;
@@ -64,9 +63,8 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// @desc    Kullanıcı girişi
+// sisteme giriş yapma
 // @route   POST /api/auth/login
-// @access  Public
 router.post('/login', async (req, res) => {
   try {
     const { emailOrUsername, password } = req.body;
