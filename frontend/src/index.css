@@ -285,7 +285,7 @@ body {
 /* Tab Bar */
 .tab-container {
   display: flex;
-  background: rgba(0, 0, 0, 0.2);
+  background: #e5e7eb; /* Acik gri arkaplan */
   border-radius: 12px;
   padding: 4px;
   margin: 16px 20px;
@@ -306,9 +306,9 @@ body {
 }
 
 .tab-btn.active {
-  background: var(--bg-glass);
-  color: white;
-  box-shadow: var(--shadow-premium);
+  background: #ffffff; /* Beyaz aktif sekme */
+  color: var(--accent-color); /* Lacivert/Mavi yazi rengi */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Animations */
