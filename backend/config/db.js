@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const connectDB = async () => {
   try {
     // link yoksa locale bağlan
-    const conn = await mongoose.connect(process.env.DB_LINK || 'mongodb://localhost:27017/ariza-takip');
+    const dbLink = process.env.MONGO_URI || process.env.DB_LINK || 'mongodb://localhost:27017/ariza-takip';
+    const conn = await mongoose.connect(dbLink);
     console.log(`MongoDB Bağlantısı Başarılı: ${conn.connection.host}`);
   } catch (error) {
     console.error(`MongoDB Bağlantı Hatası: ${error.message}`);
